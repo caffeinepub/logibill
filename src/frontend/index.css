@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.375rem;
+
+    /* LogiBill Dark Theme — Industrial Precision */
+    /* Deep navy-charcoal backgrounds */
+    --background: 0.13 0.012 255;
+    --foreground: 0.95 0.008 250;
+    --card: 0.17 0.015 255;
+    --card-foreground: 0.95 0.008 250;
+    --popover: 0.15 0.014 255;
+    --popover-foreground: 0.95 0.008 250;
+
+    /* Primary: Electric amber/orange — logistics urgency */
+    --primary: 0.72 0.18 55;
+    --primary-foreground: 0.1 0.01 255;
+
+    /* Secondary: Cool slate */
+    --secondary: 0.22 0.018 255;
+    --secondary-foreground: 0.85 0.008 250;
+
+    /* Muted: deep navy */
+    --muted: 0.2 0.016 255;
+    --muted-foreground: 0.58 0.02 255;
+
+    /* Accent: bright teal for highlights */
+    --accent: 0.62 0.15 200;
+    --accent-foreground: 0.1 0.01 255;
+
+    /* Destructive: vivid red */
+    --destructive: 0.62 0.24 25;
+    --destructive-foreground: 0.98 0 0;
+
+    /* Status colors */
+    --success: 0.65 0.18 145;
+    --success-foreground: 0.1 0.01 145;
+    --warning: 0.78 0.17 75;
+    --warning-foreground: 0.1 0.01 75;
+    --error: 0.62 0.24 25;
+    --error-foreground: 0.98 0 0;
+
+    --border: 0.28 0.02 255;
+    --input: 0.22 0.018 255;
+    --ring: 0.72 0.18 55;
+
+    /* Chart colors */
+    --chart-1: 0.72 0.18 55;
+    --chart-2: 0.62 0.24 25;
+    --chart-3: 0.65 0.18 145;
+    --chart-4: 0.62 0.15 200;
+    --chart-5: 0.78 0.15 290;
+
+    --sidebar: 0.15 0.014 255;
+    --sidebar-foreground: 0.95 0.008 250;
+    --sidebar-primary: 0.72 0.18 55;
+    --sidebar-primary-foreground: 0.1 0.01 255;
+    --sidebar-accent: 0.2 0.016 255;
+    --sidebar-accent-foreground: 0.85 0.008 250;
+    --sidebar-border: 0.28 0.02 255;
+    --sidebar-ring: 0.72 0.18 55;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Cabinet Grotesk", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: oklch(0.17 0.015 255);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.32 0.02 255);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.42 0.03 255);
+  }
+}
+
+@layer utilities {
+  .text-success {
+    color: oklch(var(--success));
+  }
+  .text-warning {
+    color: oklch(var(--warning));
+  }
+  .text-error {
+    color: oklch(var(--error));
+  }
+  .bg-success {
+    background-color: oklch(var(--success) / 0.15);
+  }
+  .bg-warning {
+    background-color: oklch(var(--warning) / 0.15);
+  }
+  .bg-error {
+    background-color: oklch(var(--error) / 0.12);
+  }
+  .border-success {
+    border-color: oklch(var(--success) / 0.4);
+  }
+  .border-warning {
+    border-color: oklch(var(--warning) / 0.4);
+  }
+  .border-error {
+    border-color: oklch(var(--error) / 0.4);
+  }
+
+  .glow-amber {
+    box-shadow: 0 0 30px oklch(0.72 0.18 55 / 0.15), 0 0 60px oklch(0.72 0.18 55 / 0.08);
+  }
+  .glow-red {
+    box-shadow: 0 0 20px oklch(0.62 0.24 25 / 0.2);
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(oklch(0.28 0.02 255 / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.28 0.02 255 / 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .mono {
+    font-family: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
